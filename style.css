@@ -299,8 +299,8 @@ main {
 .newtoyou-wrapper img {
   width: 280px;
 }
-.newtoyou-product-details {
-}
+/* .newtoyou-product-details {
+} */
 .newtoyou-product-details a {
   display: flex;
   flex-direction: column;
