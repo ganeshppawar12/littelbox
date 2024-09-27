@@ -726,6 +726,9 @@ footer {
     overflow: hidden; /* Optional: hides any overflowing text */
     text-overflow: ellipsis;
   }
+  .section-banner .banner2 {
+    display: block;
+  }
   .banner-section-min {
     display: none;
   }
@@ -734,7 +737,7 @@ footer {
     padding-top: 60px;
   }
   .videobox {
-    flex: 0 0 100%;
+    flex: 0 0 97%;
   }
   .video-section {
     margin-left: 10px;
@@ -818,6 +821,7 @@ footer {
     padding: 10px;
     width: 220px;
     gap: 0;
+    align-items: start;
 }
 .newtoyou-box2{
     gap: 0;
@@ -826,6 +830,11 @@ footer {
 }
  .newtoyou-product-titel{
     display:none;
+ }
+
+ .price{
+    display: block;
+    margin-bottom: 5px;
  }
   /* gobeyou */
 
