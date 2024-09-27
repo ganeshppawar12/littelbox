@@ -2,10 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "roboto", sans-serif;
+}
+body {
+  -webkit-font-smoothing: antialiased;
 }
 a {
   text-decoration: none;
   color: #fff;
+  transition: color 0.1s, border-color 0.1s, opacity 0.1s,
+    text-decoration-color 0.1s;
 }
 .minnavbar {
   display: flex;
@@ -79,7 +85,7 @@ nav {
   background: #333333;
   padding: 0 40px;
 }
-.style_section ul {
+.navoption {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -94,10 +100,50 @@ nav {
   font-weight: 500;
   font-style: normal;
 }
-.style_section ul li {
+.dropdown {
   font-size: 0.7rem;
   padding: 18px;
   white-space: nowrap;
+  position: relative;
+}
+.navoption a:hover {
+  transition: 0.8s ease;
+}
+/* .style_section ul li a{
+    display: block;
+} */
+
+/* .dropdown a:hover {
+  /* border-bottom:2px solid #f39c3d; *
+  color: #f39c3d;
+  transition: all 0.5s ease-in;
+} */
+.dropdown:hover .dropdown-menu {
+  display: block !important;
+  transition: all 1s ease-in;
+}
+
+.dropdown-menu {
+  display: none !important;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  list-style: none;
+  /* min-width: 150px; */
+  border: 0.8px solid gray;
+  padding: 10px;
+}
+.dropdown-menu li {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  align-items: start;
+  padding: 10px 10px;
+  gap: 15px;
+}
+.moreoption-box ul li {
+  font-size: 0.82rem;
 }
 main {
   display: flex;
@@ -209,9 +255,13 @@ main {
 }
 .details p {
   color: #2f2f2f;
-  font-size: 0.8rem;
-  font-weight: bold;
+  font-size: 0.9rem;
+  font-weight: 900;
   text-wrap: nowrap;
+  font-family: "roboto", sans-serif;
+}
+.details a {
+  font-family: "roboto", sans-serif;
 }
 .shop-now {
   all: unset;
@@ -299,9 +349,19 @@ main {
 
 .collections-wrapper img:hover {
   transform: scale(1.05);
-  transition: all 0.3s ease;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
+/* .collections-wrapper img  {
+  opacity: 0.6;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+} */
 
+/* On hover or focus, image becomes fully visible and scales up */
+/* .collections-wrapper img:hover {
+  opacity: 1;
+  transform: scale(1);
+}  */
 .newtoyou-Section {
   padding: 0 40px;
 }
@@ -340,7 +400,7 @@ main {
 
 .newtoyou-container2 {
   margin: auto;
-    width: 1340px; 
+  width: 1340px;
   padding: 0 40px;
 }
 .header {
@@ -367,11 +427,9 @@ main {
   min-height: 454.8px;
   padding-bottom: 20px;
   margin-bottom: 20px;
-
 }
-.newtoyoubox2-border{
-    border-bottom: 1px solid rgb(130, 130, 130);
-
+.newtoyoubox2-border {
+  border-bottom: 1px solid rgb(130, 130, 130);
 }
 .newtoyou-list2 {
   display: flex;
@@ -381,6 +439,8 @@ main {
   overflow: hidden;
   gap: 10px;
   position: relative;
+  transition: all 0.5s ease;
+
 }
 .newtoyou-list2 img {
   width: 93%;
@@ -401,6 +461,31 @@ main {
   padding: 6px 12px;
   font-size: 12px;
   cursor: pointer;
+}
+
+.newtoyou-list2 :hover+ .quickbuy{
+  display: block;
+  transition: all 0.5s ease;
+}
+.newtoyou-list2 img:hover{
+  transform: scale(0.98);
+  transition: opacity 0.6s ease-out, transform 0.4s ease-out;
+}
+.quickbuy {
+  position: absolute;
+  bottom: 15%;
+  display: none;
+  font-size: 16px;
+  font-weight: 300;
+  color: #3b3838;
+  border: 1px solid rgb(230, 220, 220);
+  width: 100%;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  background-color: #fff;
+
 }
 .newtoyou-product-info {
   display: block;
@@ -439,8 +524,13 @@ main {
 .sell {
   color: #ac0a0a;
   font-family: "roboto", sans-serif;
-
 }
+
+
+
+
+/* Image Style */
+
 /* influncer */
 
 .litclub-list {
@@ -471,32 +561,29 @@ main {
   width: 100%;
 }
 
-
-
-
 /* labour-section */
-.labour{
-    width: 100%;
-    position: relative;
-    left: 0px;
-    top: 0px;
-    /* z-index: 999; */
-    opacity: 1;
-    padding: 12px 0px;
+.labour {
+  width: 100%;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  /* z-index: 999; */
+  opacity: 1;
+  padding: 12px 0px;
 }
-.labour-section{
-    background-image: url(img/littleboxMSG.jpg);
-    background-position: center center;
-    transition: background 0.15s;
-    opacity: 1;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 90vh;
-    user-select: none;
-    width: 100%;
+.labour-section {
+  background-image: url(img/littleboxMSG.jpg);
+  background-position: center center;
+  transition: background 0.15s;
+  opacity: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  user-select: none;
+  width: 100%;
 }
-.labour-section-mobile{
-    display: none;
+.labour-section-mobile {
+  display: none;
 }
 /* gobeyou */
 
@@ -642,51 +729,49 @@ footer {
 .categories-container {
   display: none;
 }
-@media screen and (max-width:1200px) {
-    .style_section{
-        padding: 0 20px;
-    }
-    .style_section ul{
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-    .collection-section {
-        padding: 40px 20px;
-    }
-    
-    .collections-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        margin-left: 5px;
-        margin-top: 21px;
-    }
-    .collections-wrapper img{
-        width:100% ;
-    }
-    .newtoyou-container2 {
-        margin: auto;
-        width: 1100px;
-        padding: 0 40px;
-    }
-    .whatweProvide img{
-        width: 100%;
+@media screen and (max-width: 1200px) {
+  .style_section {
+    padding: 0 20px;
+  }
+  .style_section ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  .collection-section {
+    padding: 40px 20px;
+  }
 
-    }
-    
+  .collections-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-left: 5px;
+    margin-top: 21px;
+  }
+  .collections-wrapper img {
+    width: 100%;
+  }
+  .newtoyou-container2 {
+    margin: auto;
+    width: 1100px;
+    padding: 0 40px;
+  }
+  .whatweProvide img {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 900px) {
-    .newtoyou-container2 {
+  .newtoyou-container2 {
     margin: auto;
     width: 850px;
     padding: 0 20px;
-}
-.newtoyou-box2 {
+  }
+  .newtoyou-box2 {
     margin-top: 20px;
-}
+  }
 }
 @media screen and (max-width: 600px) {
   .minnavbar {
@@ -852,35 +937,35 @@ footer {
   } */
 
   .newtoyou-Section2 {
- padding-bottom: 30px;
-}
-.newtoyou-main{
+    padding-bottom: 30px;
+  }
+  .newtoyou-main {
     overflow-y: hidden;
-}
-.newtoyou-container2{
+  }
+  .newtoyou-container2 {
     width: 1000px;
     overflow: hidden;
     padding: 0;
-}
-.newtoyou-list2{
+  }
+  .newtoyou-list2 {
     padding: 10px;
     width: 220px;
     gap: 0;
     align-items: start;
-}
-.newtoyou-box2{
+  }
+  .newtoyou-box2 {
     gap: 0;
-    justify-content:space-around;
+    justify-content: space-around;
     min-height: 0px;
-}
- .newtoyou-product-titel{
-    display:none;
- }
+  }
+  .newtoyou-product-titel {
+    display: none;
+  }
 
- .price{
+  .price {
     display: block;
     margin-bottom: 5px;
- }
+  }
   /* gobeyou */
 
   .whatweProvide img {
@@ -894,9 +979,7 @@ footer {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    height:50vh;
-
-
+    height: 50vh;
   }
   /* .labour-section-mobile{
     background-image: url(img/labourimg2.webp);
