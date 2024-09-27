@@ -33,13 +33,15 @@ a {
 }
 .social_links ul li i {
   font-size: 15px;
+  cursor: pointer;
 }
 .offer_template p {
   color: #fff;
-  font-weight: 900;
+  font-weight: 800;
   /* font-family: "Montserrat", sans-serif; */
   font-family: "Futura Std", sans-serif;
   font-size: 14px;
+  cursor: pointer;
 }
 nav {
   position: sticky;
@@ -57,6 +59,7 @@ nav {
 .logo img {
   width: 120px;
   padding: 20px 0;
+  cursor: pointer;
 }
 .user_section {
   display: flex;
@@ -70,6 +73,7 @@ nav {
   font-family: sans-serif;
   font-family: "Montserrat", sans-serif;
   gap: 10px;
+  cursor: pointer;
 }
 
 .user_section li p {
@@ -104,10 +108,18 @@ nav {
   font-size: 0.7rem;
   padding: 18px;
   white-space: nowrap;
+  /* position: relative; */
+  cursor: pointer;
+}
+.dropdown2{
+  font-size: 0.7rem;
+  padding: 18px;
+  white-space: nowrap;
   position: relative;
+  cursor: pointer;
 }
 .navoption a:hover {
-  transition: 0.8s ease;
+  transition: 0.5s ease;
 }
 /* .style_section ul li a{
     display: block;
@@ -120,17 +132,35 @@ nav {
 } */
 .dropdown:hover .dropdown-menu {
   display: block !important;
-  transition: all 1s ease-in;
+  /* transition: all 1s ease-in; */
 }
 
+.dropdown:hover .dropdown2-menu {
+  display: block !important;
+  /* transition: all 1s ease-in; */
+}
 .dropdown-menu {
   display: none !important;
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 100.1%;
+  left: 0px;
   background-color: #333;
   list-style: none;
   /* min-width: 150px; */
+  width: fit-content;
+  border: 0.8px solid gray;
+  padding: 10px;
+  width: 100%;
+}
+.dropdown2-menu{
+  display: none !important;
+  position: absolute;
+  top: 100%;
+  left:0px;
+  background-color: #333;
+  list-style: none;
+  /* min-width: 150px; */
+  width: fit-content;
   border: 0.8px solid gray;
   padding: 10px;
 }
@@ -141,6 +171,44 @@ nav {
   align-items: start;
   padding: 10px 10px;
   gap: 15px;
+}
+
+.dropdown a:hover {
+  /* border-bottom:2px solid red; */
+  color: #ca573d;
+}
+.navcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  max-width: 1480px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  /* height: 50vh; */
+  /* overflow-x: hidden; */
+  
+}
+
+.navcontainer img{
+  border-radius: 5px;
+}
+/* .navcontainer a{
+  font-size: 10px;
+  padding: 0;
+} */
+.navcontainer ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+  padding: 0 !important;
+
+}
+.suboptions {
+  display: flex
 }
 .moreoption-box ul li {
   font-size: 0.82rem;
@@ -416,6 +484,8 @@ main {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  font-size: 24px;
+  font-weight: 500;
 }
 .newtoyou-box2 {
   display: flex;
@@ -440,7 +510,6 @@ main {
   gap: 10px;
   position: relative;
   transition: all 0.5s ease;
-
 }
 .newtoyou-list2 img {
   width: 93%;
@@ -463,11 +532,11 @@ main {
   cursor: pointer;
 }
 
-.newtoyou-list2 :hover+ .quickbuy{
+.newtoyou-list2 :hover + .quickbuy {
   display: block;
   transition: all 0.5s ease;
 }
-.newtoyou-list2 img:hover{
+.newtoyou-list2 img:hover {
   transform: scale(0.98);
   transition: opacity 0.6s ease-out, transform 0.4s ease-out;
 }
@@ -479,13 +548,13 @@ main {
   font-weight: 300;
   color: #3b3838;
   border: 1px solid rgb(230, 220, 220);
-  width: 100%;
+  width: 90%;
   text-align: center;
   padding: 8px;
   border-radius: 5px;
-  transition: all 0.5s ease;
+  /* transition: all 0.5s ease; */
   background-color: #fff;
-
+  cursor: pointer;
 }
 .newtoyou-product-info {
   display: block;
@@ -526,9 +595,6 @@ main {
   font-family: "roboto", sans-serif;
 }
 
-
-
-
 /* Image Style */
 
 /* influncer */
@@ -542,6 +608,8 @@ main {
 }
 .litclub-list h2 {
   text-align: center;
+  font-size: 24px;
+  font-weight: 500;
 }
 .influencer {
   display: flex;
@@ -918,6 +986,9 @@ footer {
     padding: 0;
     /* overflow-x: hidden; */
   }
+  .titel {
+    font-size: 14px;
+  }
 
   .pick-mood-list {
     overflow-x: scroll; /* Ensure horizontal scroll on small screens */
@@ -928,6 +999,9 @@ footer {
   .pick-mood {
     flex: 0 0 120px; /* Reduce the size of each mood item for smaller screens */
   }
+  /* .pick-mood-section h2{
+    font-size: 14px;
+  } */
 
   .pick-mood p {
     font-size: 14px; /* Reduce the font size for smaller screens */
