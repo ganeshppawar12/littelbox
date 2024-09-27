@@ -723,6 +723,7 @@ footer {
 
 .footer-social ul {
   display: flex;
+  flex-wrap: wrap;
 }
 .footer-logo {
   display: flex;
